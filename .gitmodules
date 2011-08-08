@@ -1,0 +1,3 @@
+[submodule "Library/SampleLib"]
+	path = Library/SampleLib
+	url = git@github.com:rodrigo-lima/SampleLib.git
