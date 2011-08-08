@@ -23,6 +23,7 @@
 		384695DB13F03A43007FB115 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 384695D913F03A43007FB115 /* InfoPlist.strings */; };
 		384695DD13F03A43007FB115 /* SampleAppTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 384695DC13F03A43007FB115 /* SampleAppTests.h */; };
 		384695DF13F03A43007FB115 /* SampleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 384695DE13F03A43007FB115 /* SampleAppTests.m */; };
+		384695E913F03D6B007FB115 /* libSampleLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 384695E813F03D6B007FB115 /* libSampleLib.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		384695DA13F03A43007FB115 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		384695DC13F03A43007FB115 /* SampleAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleAppTests.h; sourceTree = "<group>"; };
 		384695DE13F03A43007FB115 /* SampleAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleAppTests.m; sourceTree = "<group>"; };
+		384695E813F03D6B007FB115 /* libSampleLib.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libSampleLib.a; path = "../Library/SampleLib/build/Release-iphoneos/libSampleLib.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384695E913F03D6B007FB115 /* libSampleLib.a in Frameworks */,
 				384695AF13F03A43007FB115 /* UIKit.framework in Frameworks */,
 				384695B113F03A43007FB115 /* Foundation.framework in Frameworks */,
 				384695B313F03A43007FB115 /* CoreGraphics.framework in Frameworks */,
@@ -105,6 +108,7 @@
 		384695AD13F03A43007FB115 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				384695E813F03D6B007FB115 /* libSampleLib.a */,
 				384695AE13F03A43007FB115 /* UIKit.framework */,
 				384695B013F03A43007FB115 /* Foundation.framework */,
 				384695B213F03A43007FB115 /* CoreGraphics.framework */,
@@ -342,7 +346,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 			};
 			name = Debug;
 		};
@@ -360,7 +369,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

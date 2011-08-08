@@ -7,6 +7,8 @@
 //
 
 #import "RootViewController.h"
+#import "NSDate+Humanize.h"
+
 
 @implementation RootViewController
 
@@ -52,7 +54,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 5;
 }
 
 // Customize the appearance of table view cells.
@@ -65,6 +67,42 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 
+    switch (indexPath.row) {
+        case 0:
+        {
+            NSDate* somedate = [NSDate dateWithTimeIntervalSinceNow:-(2*DAY_IN_SECONDS)];
+            cell.textLabel.text = [somedate humanizedDescription];
+        }
+            break;
+        case 1:
+        {
+            NSDate* somedate = [NSDate dateWithTimeIntervalSinceNow:-DAY_IN_SECONDS];
+            cell.textLabel.text = [somedate humanizedDescription];
+        }
+            break;
+        case 2:
+        {
+            NSDate* somedate = [NSDate date];
+            cell.textLabel.text = [somedate humanizedDescription];
+        }
+            break;
+        case 3:
+        {
+            NSDate* somedate = [NSDate dateWithTimeIntervalSinceNow:DAY_IN_SECONDS];
+            cell.textLabel.text = [somedate humanizedDescription];
+        }
+            break;
+        case 4:
+        {
+            NSDate* somedate = [NSDate dateWithTimeIntervalSinceNow:(2*DAY_IN_SECONDS)];
+            cell.textLabel.text = [somedate humanizedDescription];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
     // Configure the cell.
     return cell;
 }
