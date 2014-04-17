@@ -7,7 +7,9 @@ dist/*
 *.mode2v3
 *.perspectivev3
 *.xcuserdatad/
+*.xcuserdata/*
 profile
+xcshareddata
 
 #automated testing &amp; code coverage
 test-reports/*
