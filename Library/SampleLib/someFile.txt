@@ -1,6 +1,6 @@
 
 some more changes here
 
-
+MERGE CONFLICT _- MASTER
 
 hello there MASTER
