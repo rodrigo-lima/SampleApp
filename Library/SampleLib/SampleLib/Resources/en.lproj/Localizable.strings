@@ -1,0 +1,14 @@
+/* how many days ago. i.e. '3 days ago' */
+"%d days ago" = "%d days ago";
+
+/* how many weeks ago. i.e. '3 weeks ago' */
+"%d weeks ago" = "%d weeks ago";
+
+"1 day ago" = "1 day ago";
+
+"1 week ago" = "1 week ago";
+
+"Tomorrow" = "Tomorrow";
+
+"Yesterday" = "Yesterday";
+
